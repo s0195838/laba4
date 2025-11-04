@@ -35,6 +35,21 @@
             border-color: #dee2e6 !important;      /* Цвет границ */
             background-color: transparent !important; /* Прозрачный фон ячеек */
         }
+        
+        /* Стили для мобильного меню */
+        @media (max-width: 767.98px) {
+            .mobile-menu {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            .mobile-menu a {
+                width: 100% !important;
+                text-align: center !important;
+                padding: 0.75rem 1rem !important;
+                border: 1px solid #dee2e6 !important;
+                border-radius: 0.375rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -53,7 +68,7 @@
                     <span class="fs-4 fw-bold text-dark">Название сайта</span>
                     <!-- Название сайта: fs-4 - размер шрифта, fw-bold - жирный, text-dark - темный цвет -->
                 </div>
-                <nav class="d-flex flex-wrap gap-2 gap-md-3 justify-content-center">
+                <nav class="d-flex flex-wrap gap-2 gap-md-3 justify-content-center mobile-menu">
                     <!-- Навигационное меню: flex-wrap - перенос на новую строку, gap - расстояние между ссылками -->
                     <a href="#" class="text-decoration-none text-primary fw-medium px-2 py-1 rounded">Ссылка меню 1</a>
                     <!-- text-decoration-none - убрать подчеркивание, text-primary - синий цвет -->
