@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!-- Объявление типа документа HTML5 -->
-
-
+<html lang="ru">
 <head>
     <!-- Мета-информация и настройки страницы -->
     <meta charset="UTF-8">
@@ -16,7 +15,7 @@
     <!-- Подключение фреймворка Bootstrap 5 для стилей и компонентов -->
     
     <style>
-        /* КАСТОМНЫЕ СТИЛИ ДЛЯ ПЕРЕОПРЕДЕЛЕНИЯ BOOTSTRAP */
+        /* КАСТОМНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ТАБЛИЦЫ */
         
         /* Стили для четных строк таблицы */
         table#custom-table tbody tr:nth-child(even) {
@@ -36,22 +35,6 @@
             border-color: #dee2e6 !important;      /* Цвет границ */
             background-color: transparent !important; /* Прозрачный фон ячеек */
         }
-        
-        /* Стили для секций контента */
-        .custom-section {
-            background-color: #f8f9fa;     /* Светло-серый фон */
-            border-radius: 8px;            /* Закругленные углы */
-            padding: 20px;                 /* Внутренние отступы */
-            margin-bottom: 30px;           /* Внешний отступ снизу */
-        }
-        
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 768px) {
-            .custom-section {
-                padding: 15px;             /* Уменьшаем отступы на мобильных */
-                margin-bottom: 20px;       /* Уменьшаем отступ между секциями */
-            }
-        }
     </style>
 </head>
 
@@ -61,17 +44,17 @@
         <!-- bg-light - светло-серый фон, border-success - зеленая граница -->
         <div class="container-fluid">
             <!-- container-fluid - растягивается на всю ширину -->
-            <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                <!-- Flex-контейнер: d-flex - flexbox, justify-content-between - по краям, align-items-center - выравнивание по центру -->
-                <div class="d-flex align-items-center">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-2 border-bottom">
+                <!-- На мобильных - колонка, на планшетах+ - строка -->
+                <div class="d-flex align-items-center mb-2 mb-md-0">
                     <!-- Контейнер для логотипа и названия -->
                     <img src="logo.png" alt="Логотип" height="50" class="me-3">
                     <!-- Логотип с отступом справа (me-3) -->
                     <span class="fs-4 fw-bold text-dark">Название сайта</span>
                     <!-- Название сайта: fs-4 - размер шрифта, fw-bold - жирный, text-dark - темный цвет -->
                 </div>
-                <nav class="d-flex gap-3">
-                    <!-- Навигационное меню: d-flex - в строку, gap-3 - расстояние между ссылками -->
+                <nav class="d-flex flex-wrap gap-2 gap-md-3 justify-content-center">
+                    <!-- Навигационное меню: flex-wrap - перенос на новую строку, gap - расстояние между ссылками -->
                     <a href="#" class="text-decoration-none text-primary fw-medium px-2 py-1 rounded">Ссылка меню 1</a>
                     <!-- text-decoration-none - убрать подчеркивание, text-primary - синий цвет -->
                     <a href="#" class="text-decoration-none text-primary fw-medium px-2 py-1 rounded">Ссылка 2</a>
@@ -82,15 +65,16 @@
     </header>
 
     <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
-    <main class="container my-4">
-        <!-- container - центрирующий контейнер, my-4 - отступы сверху/снизу -->
+    <main class="container my-3 my-md-4">
+        <!-- container - центрирующий контейнер, my-3 my-md-4 - разные отступы на мобильных и десктопе -->
         <div class="row">
             <!-- Строка сетки Bootstrap -->
             
             <!-- СЕКЦИЯ ГИПЕРССЫЛОК -->
             <div class="col-12 order-2 order-md-1">
                 <!-- col-12 - на всю ширину, order-2 order-md-1 - порядок: на мобильных 2-й, на планшетах+ 1-й -->
-                <section class="custom-section" id="hyperlinks">
+                <section class="bg-light rounded p-3 p-md-4 mb-3 mb-md-4" id="hyperlinks">
+                    <!-- bg-light - светло-серый фон, rounded - закругленные углы, p-3 p-md-4 - разные отступы -->
                     <h2 class="border-bottom pb-2 mb-3">Список гиперссылок</h2>
                     <!-- border-bottom - линия под заголовком, pb-2 - отступ снизу, mb-3 - отступ снизу -->
                     <ol class="list-group list-group-numbered">
@@ -195,7 +179,7 @@
             <!-- СЕКЦИЯ ТАБЛИЦЫ -->
             <div class="col-12 order-1 order-md-2">
                 <!-- order-1 order-md-2 - порядок: на мобильных 1-й, на планшетах+ 2-й -->
-                <section class="custom-section" id="table-section">
+                <section class="bg-light rounded p-3 p-md-4 mb-3 mb-md-4" id="table-section">
                     <h2 class="border-bottom pb-2 mb-3">Таблица</h2>
                     <div class="table-responsive">
                         <!-- table-responsive - адаптивная таблица с горизонтальным скроллом на мобильных -->
@@ -254,7 +238,7 @@
             <!-- СЕКЦИЯ ФОРМЫ -->
             <div class="col-12 order-3">
                 <!-- order-3 - всегда третий в порядке -->
-                <section class="custom-section" id="form-section">
+                <section class="bg-light rounded p-3 p-md-4 mb-3 mb-md-4" id="form-section">
                     <h2 class="border-bottom pb-2 mb-3" id="form">Форма</h2>
                     <!-- id="form" - якорь для ссылки-фрагмента -->
                     <form action="#" method="post">
@@ -349,10 +333,12 @@
     <footer class="bg-light border-top py-3">
         <!-- bg-light - светло-серый фон, border-top - верхняя граница, py-3 - вертикальные отступы -->
         <div class="container-fluid">
-            <p class="fw-bold text-dark mb-0">Павлов Артём</p>
-            <!-- fw-bold - жирный шрифт, text-dark - темный цвет, mb-0 - без отступа снизу -->
+            <p class="fw-bold text-dark mb-0 text-center text-md-start">Павлов Артём</p>
+            <!-- text-center text-md-start - на мобильных по центру, на планшетах+ слева -->
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
