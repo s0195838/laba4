@@ -1,264 +1,261 @@
 <!DOCTYPE html>
-<!-- Объявление типа документа - HTML5 -->
 <html lang="ru">
-<!-- Открывающий тег HTML с указанием языка страницы - русский -->
 <head>
-    <!-- Секция заголовка документа -->
     <meta charset="UTF-8">
-    <!-- Установка кодировки символов UTF-8 для поддержки кириллицы -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Настройка адаптивности для мобильных устройств -->
     <title>Гиперссылки и форма</title>
-    <!-- Заголовок страницы (отображается во вкладке браузера) -->
-    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Подключение фреймворка Bootstrap 5 для стилей и компонентов -->
-    
     <style>
         /* Только цвета для визуального оформления */
-        
-        /* Стили для четных строк таблицы */
         #custom-table tbody tr:nth-child(even) {
-            background-color: #007bff !important;  /* Синий фон */
-            color: white !important;               /* Белый текст */
-            font-weight: bold !important;          /* Жирный шрифт */
+            background-color: #007bff !important;
+            color: white !important;
+            font-weight: bold !important;
         }
-        
-        /* Стили для нечетных строк таблицы */
+
         #custom-table tbody tr:nth-child(odd) {
-            background-color: #c8efd3 !important;  /* Светло-зеленый фон */
+            background-color: #c8efd3 !important;
         }
-        
-        /* Переопределение стилей Bootstrap для ячеек таблицы */
+
         #custom-table tbody tr:nth-child(even) td,
         #custom-table tbody tr:nth-child(odd) td {
-            border-color: #dee2e6 !important;      /* Цвет границ */
-            background-color: transparent !important; /* Прозрачный фон ячеек */
+            border-color: #dee2e6 !important;
+            background-color: transparent !important;
         }
-        
-        /* Стили для секций контента */
+
         .content-section {
-            background-color: #f8f9fa;  /* Светло-серый фон */
+            background-color: #f8f9fa;
         }
-        
-        /* Стили для заголовков секций */
+
         .section-title {
-            border-bottom: 2px solid #007bff;  /* Синяя линия под заголовком */
+            border-bottom: 2px solid #007bff;
         }
     </style>
 </head>
-
 <body>
-    <!-- ===== ШАПКА САЙТА ===== -->
+    <!-- Шапка сайта -->
     <header class="bg-light border-bottom border-success">
-        <!-- header - семантический тег шапки сайта -->
-        <!-- bg-light - светло-серый фон -->
-        <!-- border-bottom - нижняя граница -->
-        <!-- border-success - зеленая граница -->
         <div class="container-fluid">
-            <!-- container-fluid - контейнер на всю ширину экрана -->
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-2 border-bottom">
-                <!-- Flex-контейнер для шапки -->
-                <!-- d-flex - включение flexbox -->
-                <!-- flex-column - вертикальное расположение на мобильных -->
-                <!-- flex-md-row - горизонтальное расположение на планшетах и выше -->
-                <!-- justify-content-between - равномерное распределение по ширине -->
-                <!-- align-items-center - выравнивание по центру по вертикали -->
-                <!-- py-2 - вертикальные отступы -->
-                <!-- border-bottom - нижняя граница -->
-                
                 <!-- Логотип и название -->
                 <div class="d-flex align-items-center mb-3 mb-md-0 flex-nowrap">
-                    <!-- Контейнер для логотипа и названия -->
-                    <!-- d-flex - flexbox -->
-                    <!-- align-items-center - выравнивание по центру -->
-                    <!-- mb-3 - отступ снизу на мобильных -->
-                    <!-- mb-md-0 - убрать отступ на планшетах и выше -->
-                    <!-- flex-nowrap - запрет переноса на новую строку -->
                     <img src="logo.png" alt="Логотип" height="50" class="me-3 flex-shrink-0">
-                    <!-- Логотип сайта -->
-                    <!-- height="50" - высота 50px -->
-                    <!-- me-3 - отступ справа -->
-                    <!-- flex-shrink-0 - запрет сжатия элемента -->
                     <span class="fs-4 fw-bold text-dark text-nowrap">Название сайта</span>
-                    <!-- Название сайта -->
-                    <!-- fs-4 - размер шрифта -->
-                    <!-- fw-bold - жирный шрифт -->
-                    <!-- text-dark - темный цвет текста -->
-                    <!-- text-nowrap - запрет переноса текста -->
                 </div>
-                
                 <!-- Навигация -->
                 <nav class="d-flex flex-column flex-md-row gap-2 w-100 w-md-auto justify-content-md-end">
-                    <!-- Навигационное меню -->
-                    <!-- flex-column - вертикальное на мобильных -->
-                    <!-- flex-md-row - горизонтальное на планшетах и выше -->
-                    <!-- gap-2 - расстояние между элементами -->
-                    <!-- w-100 - ширина 100% на мобильных -->
-                    <!-- w-md-auto - автоматическая ширина на планшетах и выше -->
-                    <!-- justify-content-md-end - выравнивание по правому краю на планшетах и выше -->
-                    
                     <a href="#" class="btn btn-outline-primary text-decoration-none fw-medium text-center">Ссылка меню 1</a>
-                    <!-- Кнопка навигации -->
-                    <!-- btn - стиль кнопки Bootstrap -->
-                    <!-- btn-outline-primary - кнопка с outline и синим цветом -->
-                    <!-- text-decoration-none - убрать подчеркивание -->
-                    <!-- fw-medium - средняя жирность шрифта -->
-                    <!-- text-center - выравнивание текста по центру -->
-                    
                     <a href="#" class="btn btn-outline-primary text-decoration-none fw-medium text-center">Ссылка 2</a>
-                    <!-- Вторая кнопка навигации -->
-                    
                     <a href="#" class="btn btn-outline-primary text-decoration-none fw-medium text-center">Ссылка 3</a>
-                    <!-- Третья кнопка навигации -->
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <!-- Основной контент -->
     <main class="container my-4">
-        <!-- main - семантический тег основного контента -->
-        <!-- container - центрирующий контейнер с отступами -->
-        <!-- my-4 - вертикальные отступы -->
-        
         <div class="row">
-            <!-- row - строка сетки Bootstrap -->
-            
-            <!-- СЕКЦИЯ ГИПЕРССЫЛОК -->
+            <!-- Секция гиперссылок -->
             <div class="col-12 order-2 order-md-1 mb-4">
-                <!-- col-12 - колонка на всю ширину -->
-                <!-- order-2 - порядок 2 на мобильных -->
-                <!-- order-md-1 - порядок 1 на планшетах и выше -->
-                <!-- mb-4 - отступ снизу -->
-                
                 <section class="content-section rounded p-4 shadow" id="hyperlinks">
-                    <!-- section - семантический тег секции -->
-                    <!-- content-section - кастомный класс для стилей -->
-                    <!-- rounded - закругленные углы -->
-                    <!-- p-4 - внутренние отступы -->
-                    <!-- shadow - тень -->
-                    <!-- id="hyperlinks" - идентификатор для навигации -->
-                    
                     <h2 class="section-title pb-2 mb-3">Список гиперссылок</h2>
-                    <!-- Заголовок секции -->
-                    <!-- section-title - кастомный класс для стилей -->
-                    <!-- pb-2 - отступ снизу -->
-                    <!-- mb-3 - внешний отступ снизу -->
-                    
                     <ol class="list-group list-group-numbered">
-                        <!-- Нумерованный список -->
-                        <!-- list-group - стиль списка Bootstrap -->
-                        <!-- list-group-numbered - нумерованный список -->
-                        
-                        <!-- Элементы списка с гиперссылками -->
                         <li class="list-group-item border-0 bg-transparent">
-                            <!-- border-0 - без границ -->
-                            <!-- bg-transparent - прозрачный фон -->
                             <a href="http://kubsu.ru" class="text-decoration-none">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a>
-                            <!-- text-decoration-none - убрать подчеркивание -->
                         </li>
-                        
-                        <!-- Остальные элементы списка аналогичны -->
                         <li class="list-group-item border-0 bg-transparent">
                             <a href="https://www.kubsu.ru/index.php" class="text-decoration-none">Абсолютная на главную сайта kubsu.ru в протоколе https</a>
                         </li>
-                        
                         <li class="list-group-item border-0 bg-transparent">
                             <a href="https://kubsu.ru/" class="text-decoration-none">
                                 <img src="image.jpg" alt="Цветочек" class="img-fluid" style="max-width: 450px;">
-                                <!-- img-fluid - адаптивное изображение -->
-                                <!-- style="max-width: 450px;" - ограничение максимальной ширины -->
                             </a>
                         </li>
-                        
-                        <!-- ... остальные элементы списка ... -->
-                        
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="/library" class="text-decoration-none">Сокращенная ссылка на внутреннюю страницу</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="/" class="text-decoration-none">Сокращенная ссылка на главную страницу КубГУ</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="#form" class="text-decoration-none">Ссылка на фрагмент текущей страницы</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="https://example.com/page?param1=value1&param2=value2&param3=value3" class="text-decoration-none">Ссылка с тремя параметрами в URL</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="https://www.kubsu.ru/ru/node/38921?id=12345" class="text-decoration-none">Ссылка с параметром id в URL</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="page.html" class="text-decoration-none">Относительная на страницу в текущем каталоге</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="about/index.html" class="text-decoration-none">Относительная на страницу в каталоге about</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="../parent.html" class="text-decoration-none">Относительная на страницу в каталоге уровнем выше текущего</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="../../grandparent.html" class="text-decoration-none">Относительная на страницу в каталоге двумя уровнями выше</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            Это <a href="https://www.kubsu.ru/ru/abiturient/campaign2025" class="text-decoration-none">контекстная ссылка</a> в тексте абзаца.
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="https://ru.wikipedia.org/wiki/HTML#Версии" class="text-decoration-none">Ссылка на фрагмент страницы стороннего сайта</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <p class="mb-1">Квадрат - русская версия сайта КУБГУ</p>
+                            <p class="mb-2">Круг - английская версия сайта КУБГУ</p>
+                            <img src="KVandKR.jpg" alt="Квадрат и круг" class="img-fluid" usemap="#examplemap">
+                            <map name="examplemap">
+                                <area shape="rect" coords="240,25,430,195" href="https://kubsu.ru/" alt="Прямоугольная область" title="https://kubsu.ru">
+                                <area shape="circle" coords="110,110,110" href="https://kubsu.ru/en" alt="Круглая область" title="https://kubsu.ru/en">
+                            </map>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="" class="text-decoration-none">Ссылка с пустым href</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a class="text-decoration-none">Ссылка без href</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="https://www.twitch.tv/" rel="nofollow" class="text-decoration-none">Ссылка, по которой запрещен переход поисковикам</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="https://www.leagueoflegends.com/ru-ru/download/" rel="noindex" class="text-decoration-none">Запрещенная для индексации поисковиками</a>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <ol class="list-group list-group-numbered mt-2">
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <a href="https://ru.wikipedia.org/wiki/HTML" title="HTML Viki" class="text-decoration-none">HTML Viki</a>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <a href="https://vk.com/fckubsu" title="Fckubsu" class="text-decoration-none">Fckubsu</a>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <a href="https://ru.uefa.com/uefachampionsleague/standings/" title="UEFA" class="text-decoration-none">UEFA</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item border-0 bg-transparent">
+                            <a href="ftp://user:password@example.com/file.txt" class="text-decoration-none">Ссылка на файл на сервере FTP с авторизацией</a>
+                        </li>
                     </ol>
                 </section>
             </div>
 
-            <!-- СЕКЦИЯ ТАБЛИЦЫ -->
+            <!-- Секция таблицы -->
             <div class="col-12 order-1 order-md-2 mb-4">
-                <!-- order-1 - порядок 1 на мобильных -->
-                <!-- order-md-2 - порядок 2 на планшетах и выше -->
-                
                 <section class="content-section rounded p-4 shadow" id="table-section">
                     <h2 class="section-title pb-2 mb-3">Таблица</h2>
-                    
                     <div class="table-responsive">
-                        <!-- table-responsive - адаптивная таблица с горизонтальным скроллом -->
                         <table class="table table-bordered" id="custom-table">
-                            <!-- table - стиль таблицы Bootstrap -->
-                            <!-- table-bordered - границы вокруг ячеек -->
-                            <!-- id="custom-table" - идентификатор для кастомных стилей -->
-                            
                             <thead>
-                                <!-- Заголовок таблицы -->
                                 <tr>
-                                    <!-- Строка таблицы -->
                                     <th>Колонка 1</th>
-                                    <!-- Заголовочная ячейка -->
                                     <th>Колонка 2</th>
                                     <th>Колонка 3</th>
                                     <th>Колонка 4</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Тело таблицы -->
                                 <tr>
                                     <td>Ячейка 1</td>
-                                    <!-- Ячейка данных -->
                                     <td>Ячейка 2</td>
                                     <td>Ячейка 3</td>
                                     <td>Ячейка 4</td>
                                 </tr>
-                                
                                 <tr>
                                     <td>Ячейка 5</td>
                                     <td colspan="2">Объединенная ячейка</td>
-                                    <!-- colspan="2" - объединение 2 колонок -->
                                     <td>Ячейка 8</td>
                                 </tr>
-                                
-                                <!-- ... остальные строки таблицы ... -->
-                                
+                                <tr>
+                                    <td>Ячейка 9</td>
+                                    <td>Ячейка 10</td>
+                                    <td>Ячейка 11</td>
+                                    <td rowspan="2">Объединенная ячейка</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 13</td>
+                                    <td>Ячейка 14</td>
+                                    <td>Ячейка 15</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 17</td>
+                                    <td>Ячейка 18</td>
+                                    <td>Ячейка 19</td>
+                                    <td>Ячейка 20</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Объединенная ячейка на всю ширину</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </div>
 
-            <!-- СЕКЦИЯ ФОРМЫ -->
+            <!-- Секция формы -->
             <div class="col-12 order-3 mb-4">
-                <!-- order-3 - всегда третий в порядке -->
-                
                 <section class="content-section rounded p-4 shadow" id="form-section">
                     <h2 class="section-title pb-2 mb-3" id="form">Форма</h2>
-                    <!-- id="form" - якорь для ссылки-фрагмента -->
-                    
                     <form action="#" method="post">
-                        <!-- Форма -->
-                        <!-- action="#" - отправка на текущую страницу -->
-                        <!-- method="post" - метод отправки данных -->
-                        
                         <div class="mb-3">
-                            <!-- mb-3 - отступ снизу -->
                             <label class="form-label fw-bold">ФИО:</label>
-                            <!-- form-label - стиль метки Bootstrap -->
-                            <!-- fw-bold - жирный шрифт -->
                             <input type="text" name="fio" class="form-control" required>
-                            <!-- form-control - стиль поля ввода Bootstrap -->
-                            <!-- required - обязательное поле -->
                         </div>
-                        
-                        <!-- ... остальные поля формы ... -->
-                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Телефон:</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">E-mail:</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Дата рождения:</label>
+                            <input type="date" name="birthdate" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Пол:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="male" required>
+                                <label class="form-check-label">Мужской</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="female">
+                                <label class="form-check-label">Женский</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Любимый язык программирования:</label>
+                            <select name="languages" multiple class="form-select" size="5">
+                                <option value="pascal">Pascal</option>
+                                <option value="c">C</option>
+                                <option value="cpp">C++</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="php">PHP</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="haskel">Haskel</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="prolog">Prolog</option>
+                                <option value="scala">Scala</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Биография:</label>
+                            <textarea name="bio" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="agreement" class="form-check-input" required>
+                            <label class="form-check-label fw-bold">С контрактом ознакомлен(а)</label>
+                        </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">Сохранить</button>
-                            <!-- type="submit" - кнопка отправки формы -->
-                            <!-- btn-primary - основная кнопка синего цвета -->
                         </div>
                     </form>
                 </section>
@@ -266,25 +263,14 @@
         </div>
     </main>
 
-    <!-- ===== ПОДВАЛ САЙТА ===== -->
+    <!-- Подвал сайта -->
     <footer class="bg-light border-top py-3">
-        <!-- footer - семантический тег подвала -->
-        <!-- bg-light - светло-серый фон -->
-        <!-- border-top - верхняя граница -->
-        <!-- py-3 - вертикальные отступы -->
-        
         <div class="container-fluid">
             <p class="fw-bold text-dark mb-0 text-center text-md-start">Павлов Артём</p>
-            <!-- fw-bold - жирный шрифт -->
-            <!-- text-dark - темный цвет текста -->
-            <!-- mb-0 - убрать отступ снизу -->
-            <!-- text-center - выравнивание по центру на мобильных -->
-            <!-- text-md-start - выравнивание по левому краю на планшетах и выше -->
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Подключение JavaScript Bootstrap (включая Popper для выпадающих элементов) -->
 </body>
-</html>
+</html> 
